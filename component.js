@@ -10,14 +10,11 @@ class Component {
   }
   createDOMFromString = (domStr) => {
     const div = document.createElement("div");
-    console.log(domStr);
     div.innerHTML = domStr;
-    console.log(div);
     return div;
   };
   _renderDOM() {
     this.el = this.createDOMFromString(this.render());
-    console.log(this.el);
     if (this.onClick) {
       this.el.addEventListener("click", this.onClick.bind(this), false);
     }
